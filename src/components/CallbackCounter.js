@@ -1,34 +1,34 @@
-import React, {useState, useMemo} from 'react'
+import React, { useState, useMemo } from "react";
 
 function CallbackCounter() {
-    const [counterOne, setCounterOne] = useState(0)
-    const [counterTwo, setCounterTwo] = useState(0)
+  const [counterOne, setCounterOne] = useState(0);
+  const [counterTwo, setCounterTwo] = useState(0);
 
-    const incrementOne = () =>{
-        setCounterOne(counterOne + 1)
-    }
+  const incrementOne = () => {
+    setCounterOne(counterOne + 1);
+  };
 
-    const incrementTwo = () =>{
-        setCounterTwo(counterTwo + 1)
-    }
+  const incrementTwo = () => {
+    setCounterTwo(counterTwo + 1);
+  };
 
-    const isEven = useMemo(() =>{
-        let i = 0
-        while(i<200000000) i++
-        return counterOne % 2 === 0
-    }, [counterOne])
+  const isEven = useMemo(() => {
+    let i = 0;
+    while (i < 200000000) i++;
+    return counterOne % 2 === 0;
+  }, [counterOne]);
 
   return (
     <div>
-        <div>
-            <button onClick={incrementOne}>CounterOne - {counterOne}</button>
-            <span>{isEven ? 'even' : 'odd'}</span>
-        </div>
-        <div>
-            <button onClick={incrementTwo}>CounterTwo - {counterTwo}</button>
-        </div>
+      <div>
+        <button onClick={incrementOne}>CounterOne - {counterOne}</button>
+        <span>{isEven ? "even" : "odd"}</span>
+      </div>
+      <div>
+        <button onClick={incrementTwo}>CounterTwo - {counterTwo}</button>
+      </div>
     </div>
-  )
+  );
 }
 
-export default CallbackCounter
+export default CallbackCounter;
